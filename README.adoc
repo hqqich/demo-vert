@@ -1,0 +1,22 @@
+= Demo-vert
+
+image:https://img.shields.io/badge/vert.x-4.4.2-purple.svg[link="https://vertx.io"]
+
+快速实现一个vert.x web服务端
+
+http://start.vertx.io
+
+== 使用
+
+```
+./mvnw clean test
+```
+
+```
+./mvnw clean package
+```
+
+```
+./mvnw clean compile exec:java
+```
+
