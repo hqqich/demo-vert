@@ -58,12 +58,12 @@ class MainVerticle : AbstractVerticle() {
     // html页面统一分配到template目录
     router.routeWithRegex(".*html").handler(StaticHandler.create("template"))
     // 静态资源统一分配到classpath下的static目录下
-    router.route("/static/*").handler(StaticHandler.create("static"));
+    router.route("/static/*").handler(StaticHandler.create("static"))
     // 后台接口统一到接口处理目录
     router.route("/api/*").handler(ApiSignHandlerImpl())
 
     server
-      .requestHandler(helloRouter.router)
+      .requestHandler(router)
       .listen(8888)
       .onSuccess { server ->
         println("HTTP server started on port " + server.actualPort())
