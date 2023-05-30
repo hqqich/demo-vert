@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+  <!-- 加载数据库配置 -->
+  <properties resource="db.properties">
+    <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/> <!-- 启用默认值特性 -->
+  </properties>
+
+  <!-- 打印sql日志 -->
+  <settings>
+    <setting name="logImpl" value="STDOUT_LOGGING"/>
+  </settings>
+
+  <!-- 指定整个包下的类都是别名 -->
+  <typeAliases>
+    <package name="me.hqqich.vertx.pojo"/>
+  </typeAliases>
+
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <!--    可以指定默认值    -->
+        <property name="driver" value="${driver:com.mysql.cj.jdbc.Driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${un:root}"/>
+        <property name="password" value="${pw:123456}"/>
+      </dataSource>
+    </environment>
+  </environments>
+
+  <mappers>
+    <mapper resource="mapper/PersonMapper.xml"/>
+  </mappers>
+</configuration>

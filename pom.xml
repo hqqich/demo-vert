@@ -10,7 +10,7 @@
   <packaging>pom</packaging>
   <modules>
     <module>vert-quickstart</module>
-    <module>vert-mysql</module>
+    <module>vert-jdbc</module>
     <module>vertx-wiki</module>
   </modules>
 
